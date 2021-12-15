@@ -1,4 +1,5 @@
 <p align="center">
+<h2>A fork of... to look like rocket league. very scuffed</h2>
   <img src="https://github.com/dhhruv/Chrome-Dino-Runner/blob/master/assets/DinoWallpaper.png" width="97" height="97">
   <h2 align="center" style="margin-top: -4px !important;">A Replica of the hidden Dinosaur Game from Chrome Browser Offline mode so you don't have to be offline to play it...😂😂</h2>
   <p align="center">

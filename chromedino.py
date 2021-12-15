@@ -23,6 +23,39 @@ pygame.display.set_icon(Ico)
 RUNNING = [
     pygame.image.load(os.path.join("assets/Dino", "DinoRun1.png")),
     pygame.image.load(os.path.join("assets/Dino", "DinoRun2.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun3.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun4.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun5.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun6.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun7.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun8.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun9.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun10.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun11.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun12.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun13.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun14.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun15.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun16.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun17.png")), 
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun18.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun19.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun20.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun21.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun22.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun24.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun25.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun26.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun27.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun28.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun29.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun30.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun31.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun31.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun32.png")),
+    pygame.image.load(os.path.join("assets/Dino", "DinoRun33.png")),    
+
+    
 ]
 JUMPING = pygame.image.load(os.path.join("assets/Dino", "DinoJump.png"))
 DUCKING = [
@@ -83,7 +116,7 @@ class Dinosaur:
         if self.dino_jump:
             self.jump()
 
-        if self.step_index >= 10:
+        if self.step_index >= 32:
             self.step_index = 0
 
         if (userInput[pygame.K_UP] or userInput[pygame.K_SPACE]) and not self.dino_jump:
@@ -100,14 +133,14 @@ class Dinosaur:
             self.dino_jump = False
 
     def duck(self):
-        self.image = self.duck_img[self.step_index // 5]
+        self.image = self.duck_img[self.step_index // 16]
         self.dino_rect = self.image.get_rect()
         self.dino_rect.x = self.X_POS
         self.dino_rect.y = self.Y_POS_DUCK
         self.step_index += 1
 
     def run(self):
-        self.image = self.run_img[self.step_index // 5]
+        self.image = self.run_img[self.step_index]
         self.dino_rect = self.image.get_rect()
         self.dino_rect.x = self.X_POS
         self.dino_rect.y = self.Y_POS
@@ -174,7 +207,7 @@ class LargeCactus(Obstacle):
 
 
 class Bird(Obstacle):
-    BIRD_HEIGHTS = [250, 290, 320]
+    BIRD_HEIGHTS = [240, 250, 270]
 
     def __init__(self, image):
         self.type = 0
